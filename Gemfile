@@ -42,3 +42,8 @@ gem 'spring',        group: :development
 
 # Devise for authentication
 gem 'devise'
+
+# bourbon.io and family
+gem 'bourbon'
+gem 'neat'
+gem 'bitters'

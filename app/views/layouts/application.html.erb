@@ -8,17 +8,34 @@
 </head>
 <body>
 
-<% if user_signed_in? %>
-  <%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %>
-<% else %>
-  <%= link_to 'Sign Up', new_user_registration_path %> |
-  <%= link_to 'Sign In', new_user_session_path %>
-<% end %>
+<div id='main' class='<%= controller_name %> <%= action_name %>'>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+  <%= render 'shared/nav' %>
 
-<%= yield %>
+  <section>
+    <aside>Bourbon mixins</aside>
+    <article>
+      <%= link_to 'Bourbon', 'http://bourbon.io/' %> is a simple and lightweight mixin library for Sass.
+    </article>
+  </section>
+  <section>
+    <aside>Neat grid</aside>
+    <article>
+      <%= link_to 'Neat', 'http://neat.bourbon.io/' %> is an open source semantic grid framework built on top of Sass and Bourbon.
+    </article>
+  </section>
+  <section>
+    <aside>Bitters styles</aside>
+    <article>
+      <%= link_to 'Bitters', 'http://bitters.bourbon.io/' %> is scaffold styles, variables and structure for Bourbon projects.
+    </article>
+  </section>
+
+  <section id='content'>
+    <%= yield %>
+  </section>
+
+</div>
 
 </body>
 </html>
