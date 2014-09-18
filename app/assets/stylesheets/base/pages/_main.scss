@@ -7,7 +7,6 @@ section {
   @include outer-container;
   aside { @include span-columns(3); }
   article { @include span-columns(9); }
-  border-bottom: 1px solid #eee;
 }
 
 aside {
@@ -44,4 +43,23 @@ article {
 
 #switch {
   margin-top: .8em;
+}
+
+.field {
+  margin-bottom: 1em;
+}
+
+// Overriding Bourbon
+label, select {
+  display: inline;
+  margin-bottom: .75em;
+}
+
+.flash,
+.flash-success,
+.flash-notice,
+.flash-error,
+.flash-warning {
+  margin-top: 1em;
+  margin-bottom: 0;
 }

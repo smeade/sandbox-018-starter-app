@@ -1,0 +1,8 @@
+<section class="flash">
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, class: "flash-#{name}" do %>
+      <%= msg %>
+      <a aria-hidden="true" class="close-symbol fa fa-times" data-dismiss="alert"></a>
+    <% end %>
+  <% end %>
+</section>

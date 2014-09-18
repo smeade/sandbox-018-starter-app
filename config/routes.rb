@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :todos
+
   root 'home#index'
   devise_for :users
 
