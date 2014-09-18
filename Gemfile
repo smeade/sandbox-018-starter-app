@@ -40,6 +40,9 @@ gem 'spring',        group: :development
 # =========================
 # Application-specific Gems
 
+# Import CSV files
+gem 'smarter_csv'
+
 # Devise for authentication
 gem 'devise'
 

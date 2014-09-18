@@ -1,0 +1,32 @@
+<h1>New import</h1>
+
+<%= form_for(@import) do |f| %>
+  <% if @import.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@import.errors.count, "error") %> prohibited this import from being saved:</h2>
+
+      <ul>
+      <% @import.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title, placeholder: "Give this import a name so you can refer back to it in the future" %>
+  </div>
+
+  <div class="field">
+    <label>CSV File</label> <%= link_to 'example', '/csv_file.csv' %><br>
+    <code>content,due_at,private</code><br/>
+    <%= f.file_field :file %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Import" %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', imports_path %>

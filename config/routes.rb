@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :todos
+  root 'todos#index'
 
-  root 'home#index'
+  resources :imports
+  resources :todos
   devise_for :users
 
   # The priority is based upon order of creation: first created -> highest priority.

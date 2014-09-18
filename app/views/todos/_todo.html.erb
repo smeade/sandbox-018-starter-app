@@ -1,0 +1,11 @@
+<tr>
+  <td><%= todo.content %></td>
+  <td><%= todo.due_at %></td>
+  <td><%= todo.private %></td>
+  <td><%= todo.trashed %></td>
+  <td><%= todo.creator_id %></td>
+  <td><%= todo.assignee_id %></td>
+  <td><%= link_to 'Show', todo %></td>
+  <td><%= link_to 'Edit', edit_todo_path(todo) %></td>
+  <td><%= link_to 'Destroy', todo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

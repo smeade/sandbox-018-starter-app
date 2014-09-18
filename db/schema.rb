@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140918213833) do
+ActiveRecord::Schema.define(version: 20140918223139) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "imports", force: true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "todos", force: true do |t|
     t.string   "content"
@@ -25,7 +31,10 @@ ActiveRecord::Schema.define(version: 20140918213833) do
     t.integer  "assignee_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "import_id"
   end
+
+  add_index "todos", ["import_id"], name: "index_todos_on_import_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

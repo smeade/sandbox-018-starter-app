@@ -1,5 +1,8 @@
-<h1>Listing todos</h1>
+<h2><%= @import.title %></h2>
 
+<hr/>
+
+<h5>Todos Imported:</h5>
 <table>
   <thead>
     <tr>
@@ -14,10 +17,10 @@
   </thead>
 
   <tbody>
-    <%= render @todos %>
+    <%= render @import.todos %>
   </tbody>
 </table>
 
-<br>
 
-<%= link_to 'New Todo', new_todo_path %>
+<%= link_to 'Edit', edit_import_path(@import) %> |
+<%= link_to 'Back', imports_path %>
