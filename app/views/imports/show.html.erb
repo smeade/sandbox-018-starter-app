@@ -8,16 +8,19 @@
     <tr>
       <th>Content</th>
       <th>Due at</th>
-      <th>Private</th>
-      <th>Trashed</th>
-      <th>Creator</th>
-      <th>Assignee</th>
       <th></th>
     </tr>
   </thead>
 
   <tbody>
-    <%= render @import.todos %>
+    <% @import.todos.each do |todo| %>
+      <tr>
+        <td><%= todo.content %></td>
+        <td><%= todo.due_at %></td>
+        <td><%= link_to 'Details', todo %>
+        | <%= link_to 'Destroy', todo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
 

@@ -18,4 +18,5 @@ end
 #  created_at  :datetime
 #  updated_at  :datetime
 #  import_id   :integer
+#  completed   :boolean
 #
