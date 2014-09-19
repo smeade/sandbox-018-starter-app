@@ -50,3 +50,7 @@ gem 'devise'
 gem 'bourbon'
 gem 'neat'
 gem 'bitters'
+
+group :development do
+  gem 'annotate'
+end
