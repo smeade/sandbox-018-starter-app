@@ -1,4 +1,6 @@
 class ImportsController < ApplicationController
+
+  before_action :authenticate_user!
   before_action :set_import, only: [:show, :edit, :update, :destroy]
 
   # GET /imports
@@ -24,7 +26,7 @@ class ImportsController < ApplicationController
   # POST /imports
   # POST /imports.json
   def create
-    @import = Import.new(import_params)
+    @import = current_user.imports.new(import_params)
 
     respond_to do |format|
       if @import.save

@@ -1,5 +1,6 @@
 class Import < ActiveRecord::Base
 
+  belongs_to :user
   has_many :todos
 
   def file=(file)
@@ -18,4 +19,5 @@ end
 #  title      :string(255)
 #  created_at :datetime
 #  updated_at :datetime
+#  user_id    :integer
 #
